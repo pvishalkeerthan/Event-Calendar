@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Kalendar from "../components/Kalendar";
 import EventModal from "../components/EventModal";
-import EventProvider from "../context/EventContext"; // Correctly import default export
+import EventProvider from "../context/EventContext"; 
 import { Container, Row, Col } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -11,7 +11,6 @@ const StyledContainer = styled(Container)`
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(null);
 
   return (
     <EventProvider>
@@ -31,7 +30,6 @@ const Home = () => {
         <EventModal
           show={showModal}
           handleClose={() => setShowModal(false)}
-          event={selectedEvent}
         />
       </StyledContainer>
     </EventProvider>
